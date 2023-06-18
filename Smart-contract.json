@@ -1,0 +1,31 @@
+ Generated Smart-Contract:
+
+
+ ```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
+
+/**
+ * @title ChainGPT
+ * @dev ChainGPT is an ERC20 token with a fixed supply of 1,000,000,000 tokens.
+ * The token has the name "ChainGPT" and the symbol "CGPT".
+ */
+contract ChainGPT is ERC20 {
+    using SafeMath for uint256;
+
+    // The total supply of ChainGPT tokens.
+    uint256 private constant _totalSupply = 1000000000 * (10**18); // 1,000,000,000 tokens with 18 decimals
+
+    /**
+     * @dev Constructor that sets the token details and mints the total supply to the deployer.
+     */
+    constructor() ERC20("ChainGPT", "CGPT") {
+        _mint(msg.sender, _totalSupply);
+    }
+}
+```
+
+This Solidity smart contract creates an ERC20 token called ChainGPT with the symbol CGPT and a total supply of 1,000,000,000 tokens. The contract imports the OpenZeppelin ERC20 and SafeMath contracts to ensure a secure and standard implementation. The constructor sets the token details and mints the entire supply to the deployer's address.
